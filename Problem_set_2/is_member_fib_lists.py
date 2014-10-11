@@ -18,13 +18,10 @@ def member_of_nth_fib_lists(listA, listB, needle):
     lst = fib_random_numbers(len(listA), len(listB))
     print(lst)
     if len(needle) not in lst:
-        print("first here")
         return False
     else:
         for item in needle:
             if (item not in listA) and (item not in listB):
-                print("here ")
                 return False
-        print(nth_fib_lists(listA, listB, lst.index(len(needle)) + 1))
         return needle == nth_fib_lists(listA, listB, lst.index(len(needle)) + 1)
 print(member_of_nth_fib_lists([1, 2], [3, 4], [1, 2, 3, 4, 3, 4, 1, 2, 3, 4]))
