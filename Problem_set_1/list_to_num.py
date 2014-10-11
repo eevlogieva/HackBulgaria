@@ -1,11 +1,8 @@
 def list_to_numbers(digits):
     number = 0
-    for index in range(0,len(digits)-1):
-        number += digits[index]
-        print(number)
-        digits.pop(index)
-        print(number)
+    for item in digits:
+        number += item
+        digits.remove(item)
         number *= 10
-        print(number)
     return number
-print(list_to_numbers([1, 2]))
+print(list_to_numbers([1, 2, 3]))

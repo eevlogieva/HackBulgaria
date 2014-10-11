@@ -6,7 +6,7 @@ def is_an_bn(word):
     while word[index] == 'a':
         count += 1
         index += 1
-    while  index <= len(word) - 1 and word[index] == 'b':
+    while index <= len(word) - 1 and word[index] == 'b':
         count -= 1
         index += 1
     return count == 0
