@@ -14,7 +14,7 @@ class CashDesk():
 
     def can_withdraw_money(self, amount_of_money):
         money_lst = []
-        copy_money = (self.money).copy
+        copy_money = (self.money).copy()
         for note in copy_money:
             while copy_money[note] > 0:
                 money_lst.append(note)

@@ -28,7 +28,10 @@ class Store():
         self.products = {}
 
     def load_new_products(self, product, count):
-        self.products[product] = count
+        if product in self.products:
+            self.products[product] += count
+        else:
+            self.products[product] = count
 
     def list_products(self, product_class):
         for product in self.products:
