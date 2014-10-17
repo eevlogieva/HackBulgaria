@@ -5,4 +5,3 @@ def nth_fib_lists(listA, listB, n):
         return listB
     else:
         return nth_fib_lists(listA, listB, n - 2) + nth_fib_lists(listA, listB, n - 1)
-print(nth_fib_lists([], [1, 2, 3], 4))

@@ -7,4 +7,3 @@ def goldbach(n):
         if is_prime(item) and is_prime(n - item):
             result.append((item, n - item))
     return result
-print(goldbach(100))
