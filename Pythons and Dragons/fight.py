@@ -10,29 +10,20 @@ class Fight():
 
     def simulate_battle(self):
         attacker = self.attack_first()
-        attacked = [self.hero, self.orc].remove(attacker)
-
-        print(attacked)
-        if attacked == self.hero:
-            attacker = self.orc
+        if attacker == self.hero:
+            attacked = self.orc
+        else:
+            attacked = self.hero
         while self.hero.is_alive() and self.orc.is_alive():
             attacked.take_damage(attacker.attack())
-            print("The {} took damage {}".format(attacked, attacker.attack()))
-            self.change_turn(attacker, attacked)
+            print("The {} took damage {}".format(attacked.name, attacker.attack()))
+            attacker, attacked = attacked, attacker
 
     def attack_first(self):
         first = random.randint(1, 100)
         if first <= 50:
-            print("{} is first".format(self.hero.attack()))
+            print("{} is first".format(self.hero.known_as()))
             return self.hero
         else:
-            print("{} is first".format(self.orc.attack()))
+            print("{} is first".format(self.orc.name))
             return self.orc
-
-    def change_turn(self, attacker, attacked):
-        if attacker == self.hero:
-            attacker = self.orc
-            attacked = self.hero
-        else:
-            attacked = self.orc
-            attacker = self.hero

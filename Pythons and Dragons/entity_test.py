@@ -59,7 +59,7 @@ class EntityTest(unittest.TestCase):
     def test_attack(self):
         axe = weapon.Weapon("Axe", 23, 0.3)
         self.entity.equip_weapon(axe)
-        self.assertEqual(self.entity.attack(), 23 or 46)
+        self.assertIn(self.entity.attack(), [23, 46])
 
     def test_attack_has_no_weapon(self):
         self.assertEqual(self.entity.attack(), 0)
