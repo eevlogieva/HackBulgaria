@@ -51,9 +51,3 @@ class Store():
             total += product.profit() * self.products[product]
         return total
 
-store = Store('Laptop.bg')
-smarthphone = Smartphone('Hack Phone', 500, 820, 7, 10)
-store.load_new_products(smarthphone, 2)
-
-
-print(store.total_income())  # 640

@@ -34,12 +34,3 @@ class Manager(SalariedEmployee):
 
     def weekly_pay(self, hours):
         return self.annual_salary / 12 + self.weekly_bonus
-
-staff = []
-staff.append(HourlyEmployee("Morgan, Harry", 30.0))
-staff.append(SalariedEmployee("Lin, Sally", 52000.0))
-staff.append(Manager("Smith, Mary", 104000.0, 50.0))
-for employee in staff:
-    hours = int(input("Hours worked by " + employee.get_name() + ": "))
-    pay = employee.weekly_pay(hours)
-    print("Salary: %.2f" % pay)

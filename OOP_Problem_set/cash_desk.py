@@ -24,10 +24,3 @@ class CashDesk():
             if item <= amount_of_money:
                 amount_of_money -= item
         return amount_of_money == 0
-
-my_cash_desk = CashDesk()
-my_cash_desk.take_money({50: 1, 20: 1, 1: 2})
-print(my_cash_desk.total())   # 72
-print(my_cash_desk.can_withdraw_money(70))
-print(my_cash_desk.can_withdraw_money(30))
-print(my_cash_desk.can_withdraw_money(70))
